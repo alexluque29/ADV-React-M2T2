@@ -1,37 +1,37 @@
-import "./App.css";
-import { useState, useEffect } from "react";
+import './App.css'
+import { useState, useEffect } from 'react'
 
 const App = () => {
   const [boxStyle, setBoxStyle] = useState({
     width: 80,
-    background: "#ff0000",
-  });
+    background: '#ff0000',
+  })
 
   const [circleShape, setCircleShape] = useState({
     width: 90,
-    background: "#11229C",
-  });
+    background: '#11229C',
+  })
 
   const [triangleShape, setTriangleShape] = useState({
     width: 0,
-    background: "#57d111",
-  });
+    background: '#57d111',
+  })
 
   useEffect(() => {
     if (currSqSize == currCiSize && currSqSize == currTrSize) {
-      alert("Los TAMAÑOS de las tres figuras son IGUALES");
+      alert('Los TAMAÑOS de las tres figuras son IGUALES')
     }
     if (currSqColor == currCiColor && currSqColor == currTrColor) {
-      alert("Los COLORES de las tres figuras son IGUALES");
+      alert('Los COLORES de las tres figuras son IGUALES')
     }
-  }, [boxStyle, circleShape, triangleShape]);
+  }, [boxStyle, circleShape, triangleShape])
 
-  let currSqSize = boxStyle.width;
-  let currSqColor = boxStyle.background;
-  let currCiSize = circleShape.width;
-  let currCiColor = circleShape.background;
-  let currTrSize = triangleShape.width;
-  let currTrColor = triangleShape.background;
+  let currSqSize = boxStyle.width
+  let currSqColor = boxStyle.background
+  let currCiSize = circleShape.width
+  let currCiColor = circleShape.background
+  let currTrSize = triangleShape.width
+  let currTrColor = triangleShape.background
 
   return (
     <>
@@ -115,7 +115,7 @@ const App = () => {
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
