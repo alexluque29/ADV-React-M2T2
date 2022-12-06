@@ -1,42 +1,48 @@
-import './App.css'
-import { useState, useEffect } from 'react'
+import "./App.css";
+import { useState, useEffect } from "react";
 
+// Al usar toda la lógica en un mismo componente no se reutiliza, se vuelve dificil de mantener.
+// Mejor separar en los siguientes componentes, cada uno con sus PropTypes: Triangle, Circle, Square y Label, Input.
+// Reusar dichos componentes
 const App = () => {
   const [boxStyle, setBoxStyle] = useState({
     width: 80,
-    background: '#ff0000',
-  })
+    background: "#ff0000",
+  });
 
   const [circleShape, setCircleShape] = useState({
     width: 90,
-    background: '#11229C',
-  })
+    background: "#11229C",
+  });
 
+  // No guardaría color y tamaño en el mismo estado nivel
   const [triangleShape, setTriangleShape] = useState({
     width: 0,
-    background: '#57d111',
-  })
+    background: "#57d111",
+  });
 
   useEffect(() => {
     if (currSqSize == currCiSize && currSqSize == currTrSize) {
-      alert('Los TAMAÑOS de las tres figuras son IGUALES')
+      alert("Los TAMAÑOS de las tres figuras son IGUALES");
     }
     if (currSqColor == currCiColor && currSqColor == currTrColor) {
-      alert('Los COLORES de las tres figuras son IGUALES')
+      alert("Los COLORES de las tres figuras son IGUALES");
     }
-  }, [boxStyle, circleShape, triangleShape])
+  }, [boxStyle, circleShape, triangleShape]);
 
-  let currSqSize = boxStyle.width
-  let currSqColor = boxStyle.background
-  let currCiSize = circleShape.width
-  let currCiColor = circleShape.background
-  let currTrSize = triangleShape.width
-  let currTrColor = triangleShape.background
+  // Es innecesario tener esta asignación
+  let currSqSize = boxStyle.width;
+  let currSqColor = boxStyle.background;
+  let currCiSize = circleShape.width;
+  let currCiColor = circleShape.background;
+  let currTrSize = triangleShape.width;
+  let currTrColor = triangleShape.background;
 
   return (
     <>
       <h2 className="tarea">Módulo 2 - Tarea useState y useEffect</h2>
       <div className="cont-square">
+        {/* Al crear el componente Square, usar SVG en lugar de CSS y validar por PropTypes */}
         <div
           style={{
             width: `${boxStyle.width}px`,
@@ -86,6 +92,7 @@ const App = () => {
         />
       </div>
       <div className="cont-triangle">
+        {/* Intenta utilizar ESLint y Prettier. Autocierra el div, en lugar de <div></div> -> <div /> si el componente no tiene hijos */}
         <div
           style={{
             width: `${triangleShape.width}px`,
@@ -95,6 +102,7 @@ const App = () => {
             borderBottom: `${100}px solid ${triangleShape.background}`,
           }}
         ></div>
+
         <input
           type="number"
           style={{ width: 40 }}
@@ -115,7 +123,7 @@ const App = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
