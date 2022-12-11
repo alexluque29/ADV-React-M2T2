@@ -1,20 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const InputNumber = ({ id, name, value, onChange }) => {
+export const InputColor = ({ id, name, value, onChangeColor }) => {
   return (
     <input
-      type="number"
+      type="color"
       id={id}
       name={name}
       value={value}
-      onChange={onChange}
+      onChange={onChangeColor}
       style={{ width: 40 }}
     />
   )
 }
 
-InputNumber.propTypes = {
+InputColor.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
+  value: PropTypes.string,
+  onChangeColor: PropTypes.func,
 }

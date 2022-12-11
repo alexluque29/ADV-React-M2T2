@@ -1,3 +1,2 @@
-export * from './Circle'
-export * from './Square'
-export * from './Triangle'
+export * from './InputColor'
+export * from './InputNumber'
