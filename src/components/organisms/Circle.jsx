@@ -19,6 +19,8 @@ export const Circle = ({
         />
       </svg>
 
+      {/* Falta un Label asociado a cada Input, necesario por accesibilidad */}
+      {/* En el nivel Molecules deberías de tener InputNumberGroup y InputColorGroup. Ambos deben tener un Label asociado con htmlFor, id, name etc...*/}
       <InputNumber
         value={circleSize}
         circleSize={circleSize}
