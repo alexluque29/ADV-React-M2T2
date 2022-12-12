@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// El InputColor debería de ir en atoms.
 export const InputColor = ({ id, name, value, onChangeColor }) => {
   return (
     <input
