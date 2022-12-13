@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputNumber, InputColor } from '../molecules'
+import { InputNumberGroup, InputColorGroup } from '../molecules'
 
 export const Circle = ({
   circleSize,
@@ -19,12 +19,16 @@ export const Circle = ({
         />
       </svg>
 
-      <InputNumber
+      <InputNumberGroup
+        id="circleSize"
+        name="circleSize"
         value={circleSize}
         circleSize={circleSize}
         onChangeSize={(event) => setCircleSize(parseInt(event.target.value))}
       />
-      <InputColor
+      <InputColorGroup
+        id="circleColor"
+        name="circleColor"
         value={circleColor}
         circleColor={circleColor}
         onChangeColor={(event) => setCircleColor(event.target.value)}

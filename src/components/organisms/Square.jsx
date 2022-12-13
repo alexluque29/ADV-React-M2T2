@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputNumber, InputColor } from '../molecules'
+import { InputNumberGroup, InputColorGroup } from '../molecules'
 
 export const Square = ({
   squareSize,
@@ -14,12 +14,16 @@ export const Square = ({
         <rect height={squareSize} width={squareSize} fill={squareColor} />
       </svg>
 
-      <InputNumber
+      <InputNumberGroup
+        id="squareSize"
+        name="squareSize"
         value={squareSize}
         squareSize={squareSize}
         onChangeSize={(event) => setSquareSize(parseInt(event.target.value))}
       />
-      <InputColor
+      <InputColorGroup
+        id="squareColor"
+        name="squareColor"
         value={squareColor}
         squareColor={squareColor}
         onChangeColor={(event) => setSquareColor(event.target.value)}

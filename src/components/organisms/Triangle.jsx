@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputNumber, InputColor } from '../molecules'
+import { InputNumberGroup, InputColorGroup } from '../molecules'
 
 export const Triangle = ({
   triangleSize,
@@ -19,12 +19,16 @@ export const Triangle = ({
         />
       </svg>
 
-      <InputNumber
+      <InputNumberGroup
+        id="triangleSize"
+        name="triangleSize"
         value={triangleSize}
         triangleSize={triangleSize}
         onChangeSize={(event) => setTriangleSize(parseInt(event.target.value))}
       />
-      <InputColor
+      <InputColorGroup
+        id="triangleColor"
+        name="triangleColor"
         value={triangleColor}
         triangleColor={triangleColor}
         onChangeColor={(event) => setTriangleColor(event.target.value)}

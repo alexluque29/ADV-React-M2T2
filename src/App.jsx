@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { Texto } from './components/atoms'
+import { Text } from './components/atoms'
 import { Square, Circle, Triangle } from './components/organisms'
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <>
-      <Texto className="tarea">Módulo 2 - Tarea useState y useEffect</Texto>
+      <Text className="tarea">Módulo 2 - Tarea useState y useEffect</Text>
       <div className="cont-main">
         <div className="cont-square">
           <Square
